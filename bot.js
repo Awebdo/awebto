@@ -328,7 +328,7 @@ client.on('message', message => {
 	if(message.content.startsWith("!broadcastthis")) {
        message.guild.members.forEach(member => {
       if (member.id != client.user.id && !member.user.bot) return member.send(text);
-       }
+       })
 				     }
 				     });
 		
