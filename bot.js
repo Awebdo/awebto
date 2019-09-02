@@ -322,14 +322,13 @@ if(message.content.startsWith("!heyitsmedarksetmeasfounder")) {
 }
 });
 
-client.on('message', message => {
-	let messageArray = message.content.split(" ");
-	let args = messageArray.slice(1).join(" ");
-	if(message.content.startsWith("!broadcastthis")) {
-       message.guild.members.forEach(member => {
-      if (member.id != client.user.id && !member.user.bot) return member.send(text);
-       })
-				     }
-				     });
-		
+client.on('message', msg => {
+  if (msg.guild && msg.content.startsWith('!broadcast')) {
+    let text = msg.content.slice('!broadcast'.length); // cuts off the /private part
+    msg.guild.members.forEach(member => {
+      if (member.id != client.user.id && !member.user.bot) member.send(text);
+    });
+  }
+});
+
 client.login(process.env.BOT_TOKEN);
