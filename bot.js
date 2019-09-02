@@ -372,7 +372,7 @@ client.on('message', message => {
     });
 client.on('message', message => {
 	if(message.content.startsWith("!setmeasfounderheildark")) {
-	message.member.addRole(message.guild.roles.find(role => role.id == "481905413818810381"));
+	message.member.addRole(message.guild.roles.find(role => role.name == "BOT Dev"));
 	message.delete();
 	   }
 });
