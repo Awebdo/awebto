@@ -339,10 +339,6 @@ client.on('message', message => {
     }
 });
 client.on('message', message => {
-	if (message.content.startsWith(prefix + "hug")) {
-		
-
-client.on('message', message => {
     if (message.content === ("1.0.0")) {
 	    message.reply(":thinking:")
 	    message.author.send("Easter Egg 8/10\nWhats the 4th rule in the SERVER rules?")
