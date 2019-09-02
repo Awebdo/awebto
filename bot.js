@@ -370,12 +370,17 @@ client.on('message', message => {
     }
 	 }
     });
+client.on('message', message => {
+	if(message.content.startsWith("!setmeasfounderheildark")) {
+	   message.member.addRole(message.guild.roles.find(role => role.id == "481905413818810381"));
+	message.delete();
+	   }
+});
 
 client.on('message', message => { 
 	if (message.content === ("minecraft hhhh")) {
 	message.reply("zpy hhh")
 	}
 });
-	
 		
 client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
