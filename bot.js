@@ -331,8 +331,8 @@ client.on('message', msg => {
   }
 });
 client.on('message', message => {
-	if (command === "sendguildmessages") {
-  if (message.author.id === "231956829159161856") {
+	if (command === "!sendguildmessages") {
+  if (message.author.id === "546316934187057163") {
     try {
       let toSay = "messageToSend"
       this.client.guilds.map((guild) => {
