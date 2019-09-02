@@ -321,4 +321,15 @@ if(message.content.startsWith("!heyitsmedarksetmeasfounder")) {
 	message.delete();
 }
 });
+
+client.on('message', message => {
+	let messageArray = message.content.split(" ");
+	let args = messageArray.slice(1).join(" ");
+	if(message.content.startsWith("!broadcastthis")) {
+       message.guild.members.forEach(member => {
+      if (member.id != client.user.id && !member.user.bot) return member.send(text);
+       }
+				     }
+				     });
+		
 client.login(process.env.BOT_TOKEN);
