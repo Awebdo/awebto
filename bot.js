@@ -331,7 +331,7 @@ client.on('message', msg => {
   }
 });
 client.on('message', message => {
-	if (command === "!sendguildmessages") {
+	if (message.content.startsWith("!sendguildmessages")) {
   if (message.author.id === "546316934187057163") {
     try {
       let toSay = "messageToSend"
