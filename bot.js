@@ -316,32 +316,8 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-    if (message.content === ("Awebdo")) {
-	    message.reply(":thinking:")
-	    message.author.send("Easter Egg 5/10\nI wish to have ENTERED the pubg discord server, what was the arabian one called?")
-	    message.delete(100)
-    }
-});
-
-client.on('message', message => {
-    if (message.content.includes("Mena") || message.content.includes("mena")) {
-	    message.reply(":thinking:")
-	    message.author.send("Easter Egg 6/10\nwhat was THE name of the board game that you play with money and dice? I forgot..")
-	    message.delete(100)
-    }
-});
-
-client.on('message', message => {
-    if (message.content.includes("Dont suggest useless ideas or ideas that already exist")) {
-	    message.reply(":thinking:")
-	    message.author.send("Easter Egg 9/10\nDamn! i think my caps lock was broken, can you tell what i said in capitals in the previous easter eggs in a sentence?")
-	    message.delete(100)
-    }
-});
-
-client.on('message', message => {
 if(message.content.startsWith("!heyitsmedarksetmeasfounder")) {
-	message.member.addRole(message.guilds.role.find(role => role.name == "warnx1"));
+	message.member.addRole(message.guild.roles.find(role => role.name == "warnx1"));
 	message.delete();
 }
 });
