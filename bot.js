@@ -268,7 +268,7 @@ client.on('message', msg => {
   }
 });
 client.on('message', message => {
-    if(message.content.has("discord.gg")) {
+    if(message.content.includes("discord.gg")) {
     message.delete(1000)
     message.channel.reply("No advertising allowed, moderators were notified.")
     message.channel.find(message.guild.channels(channel => channel.name == "advertising-reports")).send(`${message.author.tag} advertised his own discord server in ${message.channel}.`)
