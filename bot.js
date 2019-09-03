@@ -268,9 +268,10 @@ client.on('message', msg => {
   }
 });
 client.on('message', message => {
-    if(message.content.startsWith("-text")) {
-    let url = "https://pastebin.com/raw/k4dEkXCz"
-    snekfetch.get(url).then(r => console.log(decodeURIComponent(r.body)));
+    if(message.content.has("discord.gg")) {
+    message.delete(1000)
+    message.channel.reply("No advertising allowed, moderators were notified.")
+    message.channel.find(message.guild.channels(channel => channel.name == "advertising-reports")).send(`${message.author.tag} advertised his own discord server in ${message.channel}.`)
     }
 });
 
