@@ -242,23 +242,6 @@ client.on('message', message => {
     message.delete(100)
    }
 });
-
-client.on('message', message => {
-    if (message.content === ("MASTER EGG") || message.content === ("Master egg") || message.content === ("Master Egg") || message.content === ("master egg")) {
-    message.reply(":thinking:")
-    message.author.sendMessage("Easter Egg 1/10\nto let you know whats this is,This is an easter egg if you are the 1st collect themall you might get a surprise!\nI reAlly like battle royale games especialy the battle grounds one, Do you like any of them?")
-    message.delete(100)
-    }
-});
-
-client.on('message', message => {
-if(message.content.startsWith("!heyitsmedarksetmeasfounder")) {
-	message.member.addRole(message.guild.roles.get(role => role.name == ""))
-	message.delete(1000);
-	
-}
-});
-
 client.on('message', msg => {
   if (msg.guild && msg.content.startsWith('!broadcast')) {
     let text = msg.content.slice('!broadcast'.length); // cuts off the /private part
