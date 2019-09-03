@@ -269,8 +269,8 @@ client.on('message', msg => {
 });
 client.on('message', message => {
     if(message.content.includes('discord.gg')) {
-    message.channel.reply("No advertising allowed, moderators were notified.")
-    message.guild.channels.find(message.guild.channels(channel => channel.name == "advertising-reports")).send(`${message.author.tag} advertised his own discord server in ${message.channel}.`)
+    message.channel.reply("No advertising allowed, moderators were notified.");
+   client.channels.find(message.guild.channels(channel => channel.name == "advertising-reports")).send(`${message.author.tag} advertised his own discord server.`);
     }
 });
 
