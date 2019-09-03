@@ -270,7 +270,23 @@ client.on('message', msg => {
 client.on('message', message => {
     if(message.content.startsWith(prefix + "ticket")) {
         let name = Math.floor((Math.random() * 4783) + 10);
+        let testRole = message.guild.createRole({
+            data: {
+              name: 'ticket'+name,
+              hoist: true,
+              mentionable: false,
+            },
+          });
+          message.member.addRole(message.guild.channels.find(role => role.name == "ticket"+name))
         message.guild.createChannel("ticket-"+name, "text")
+        message.guild.channel.find(role => role.name == "ticket"+name)
+        .overwritePermissions(
+            testRole,
+            { 'SEND_MESSAGES': true },
+            { 'READ_MESSAGES': true},
+            // optional 'reason' for permission overwrite
+            'closing up shop'
+        )
     }
 });
 
