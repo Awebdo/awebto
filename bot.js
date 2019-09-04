@@ -180,7 +180,7 @@ client.on("message", message=> {
     if (message.content === (prefix + "clear50")) {
 if (message.member.hasPermissions("MANAGE_MESSAGES")) {
      message.channel.bulkDelete(50);
-message.channel.send(" all messages successfully deleted :white_check_mark:");
+message.channel.send(" 50 messages successfully deleted :white_check_mark:");
 message.channel.bulkDelete(1);
 } else {
 message.reply("you do not have permissions to use this command")
@@ -220,8 +220,9 @@ var embedzp = new Discord.RichEmbed()
 .setColor('#FF0000')
  .setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')
  .setFooter('Twoon programmed by Youssef & Awebdo')
+.setTimestamp()
  .setTitle('Updates')
- .addField('Latest Updates', 'Added updates command.\nFixed discord invitation prevention.\nUpdated all embeds\nUpdated swear prevention.\nRemoved Easter eggs.\nRemoved give admin role command.\nReplaced clear all with clear50.\nUpdated most of the outdated commands')
+ .addField('Latest Updates', 'Added updates command.\nAdded broadcast command.\nFixed discord invitation prevention.\nUpdated all embeds\nUpdated swear prevention.\nRemoved Easter eggs.\nRemoved give admin role command.\nReplaced clear all with clear50.\nUpdated most of the outdated commands')
 if (message.content.startsWith(prefix + "updates")) {
   if (message.channel.name === 'commands') {
 	    message.react('✅') 
@@ -273,8 +274,8 @@ client.on('message', msg => {
 
 client.on('message', message => {
     if (message.content.includes('discord.gg')) {
-    message.channel.reply("No advertising allowed, moderators were notified.");
-   client.channels.find(message.guild.channels(channel => channel.name == "sent-reports")).send(`${message.author.tag} advertised his own discord server.`);
+    message.channel.reply("No advertising allowed");
+    message.delete(100)
     }
 });
 
