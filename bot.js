@@ -32,7 +32,7 @@ client.channels.find(channel => channel.name === 'sent-suggestions').send(` ${me
    .setColor('#0099ff')		
    .setDescription(message.content.replace('-echoembed', ''))		
    .setTimestamp()		
-   .setFooter('Twoon bot programmed by Jesse & Awebdo')
+   .setFooter('Twoon bot programmed by Youssef & Awebdo')
   if (message.content.startsWith("-echoembed")) {		
    if (message.member.hasPermissions("MANAGE_MESSAGES")) {
    message.delete(1000)		
@@ -52,10 +52,10 @@ client.on('message', message => {
 	.setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')
 	.setTitle('BOT Features')
 	.setColor('#FF0000')
-	.addField('Features', 'Ping check\nSay command\nWarn command\nSwear detector with auto warn and kick\nSuggest command\nReport command\nEcho with embed\nHelp command\nServer rules command\nInformation command\nAnd maybe even soMe eASTER EGGs :wink:')
+	.addField('Features', 'Ping check\nSay command\nWarn command\nSwear detector with auto warn and kick\nSuggest command\nReport command\nEcho with embed\nHelp command\nServer rules command\nInformation command\nClear and Clear50 command\nUpdates command\nBroadcast command')
 	.setDescription('These are the multiple features that the BOT can do, to know how to use them just type -help :slight_smile:')
 	.setTimestamp()
-	.setFooter('Twoon bot programmed by Jesse & Awebdo')
+	.setFooter('Twoon bot programmed by Youssef & Awebdo')
  if (message.content.startsWith(prefix + "features")) {
 if (message.channel.name !== 'commands') return;
 message.delete(1000)
@@ -111,17 +111,17 @@ message.channel.send(`${message.author.username} was successfully verified :whit
  .setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')
  .setTitle('Help list')
  .setDescription('This is a help list with all the commands you can use, Enjoy!')
- .addField('Commands', 'Use -ping to check your ping\nUse -say to make the BOT say what you want!\nUse -echoembed to make an embeded message\nUse -clear to delete 10 messages\nUse -clearall to clear all the messages\nUse -suggest to suggest an idea to the staff members!\nUse -warn to warn someone\nUse -verify to get verified!\nUse -report to report a bug or even report an user\nUse -info to get information about the BOT\nAnd finally use -help to get this message!')
+ .addField('Commands', 'Use -ping to check your ping\nUse -say to make the BOT say what you want!\nUse -echoembed to make an embeded message\nUse -clear to delete 10 messages\nUse -clear50 to clear 50 the messages\nUse -suggest to suggest an idea to the staff members!\nUse -warn to warn someone\nUse -verify to get verified!\nUse -report to report a bug or even report an user\nUse -info to get information about the BOT\nUse -broadcast to send a message to all members\nUse -updates to the latest updates!\\nAnd finally use -help to get this message!')
  
  .setTimestamp()
- .setFooter('Twoon BOT programmed by Jesse & Awebdo')
+ .setFooter('Twoon BOT programmed by Youssef & Awebdo')
  var embedth = new Discord.RichEmbed()
  .setColor('#32CD32')
  .setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')
  .setTitle('Help command')
  .addField('Help list sent using a private message :white_check_mark:', 'Wanna take a look on the rules? Use -rules command :wink:')
  .setTimestamp()
- .setFooter('Twoon BOT programmed by Jesse & Awebdo')
+ .setFooter('Twoon BOT programmed by Youssef & Awebdo')
  if (message.content.startsWith(prefix + "help")) {
 	 if (message.channel.name === "commands") {
   message.react('✅');
@@ -149,7 +149,7 @@ message.channel.send(`${message.author.username} was successfully verified :whit
  .setTitle('Rules command')
  .addField('Server rules were sent using a private message :white_check_mark:', 'Wanna take a look on the commands? Use -help command :wink:')
  .setTimestamp()
- .setFooter('Twoon BOT programmed by Jesse & Awebdo')
+ .setFooter('Twoon BOT programmed by Youssef & Awebdo')
  if (message.content.startsWith(prefix + "rules")) {
 	 if (message.channel.name === 'commands') {
   message.react('✅');
@@ -177,9 +177,9 @@ message.reply("you do not have permissions to use this command")
 });
 
 client.on("message", message=> {
-    if (message.content === (prefix + "clearall")) {
+    if (message.content === (prefix + "clear50")) {
 if (message.member.hasPermissions("MANAGE_MESSAGES")) {
-     message.channel.bulkDelete(100);
+     message.channel.bulkDelete(50);
 message.channel.send(" all messages successfully deleted :white_check_mark:");
 message.channel.bulkDelete(1);
 } else {
@@ -192,12 +192,12 @@ client.on("message", message=> {
  var embedfi = new Discord.RichEmbed()
  .setColor('#FF0000')
  .setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')
- .setFooter('Twoon programmed by Jesse & Awebdo')
+ .setFooter('Twoon programmed by Youssef & Awebdo')
  .setTimestamp()
- .addField('Version 1.0.0', 'Server moderation with multiple features')
+ .addField('Version 1.0.3', 'Server moderation with multiple features')
  .addField('Servers', client.guilds.size)
  .addField('BOT Users', client.users.size)
- .addField ('Owners','Awebdo#9161  [Facebook account](https://www.facebook.com/profile.php?id=100007133072446)\nJesse#8454  [Facebook account](https://www.facebook.com/html541564)')
+ .addField ('Owners','Awebdo#9161  [Facebook account](https://www.facebook.com/profile.php?id=100007133072446)\nYoussef#8698  [Facebook account](https://www.facebook.com/html541564)')
     if (message.content.startsWith(prefix + "info")) {
 	    if (message.channel.name === 'commands') {
 		    var emojiang = '569627380084375573';
@@ -215,10 +215,27 @@ client.on('message', message => {
        }
 });
 
+client.on('message', message => {
+var embedzp = new Discord.RichEmbed()
+.setColor('#FF0000')
+ .setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')
+ .setFooter('Twoon programmed by Youssef & Awebdo')
+ .setTitle('Updates')
+ .addField('Latest Updates', 'Added updates command.\nFixed discord invitation prevention.\nUpdated all embeds\nUpdated swear prevention.\nRemoved Easter eggs.\nRemoved give admin role command.\nReplaced clear all with clear50.\nUpdated most of the outdated commands')
+if (message.content.startsWith(prefix + "updates")) {
+  if (message.channel.name === 'commands') {
+	    message.react('✅') 
+	  message.channel.sendEmbed(embedzp);
+	} else {
+message.channel.send("Nope, use <#572057152559120394> instead <:angrycowboy:569627380084375573>");
+}
+}
+});
+
 
 client.on('message', message => {
   
-     if (message.content.includes("shit") || message.content.includes("fuck") || message.content.includes("احا") || message.content.includes("كسم") || message.content.includes("شرموط") || message.content.includes("متناك") || message.content.includes("kosom") || message.content.includes("a7a") || message.content.includes("ksm") || message.content.includes("asshole") || message.content.includes("cunt") || message.content.includes("bitch") || message.content.includes("mtnak")) {
+     if (message.content.includes("shit") || message.content.includes("خخخ") || message.content.includes("fuck") || message.content.includes("احا") || message.content.includes("كسم") || message.content.includes("شرموط") || message.content.includes("متناك") || message.content.includes("kosom") || message.content.includes("a7a") || message.content.includes("ksm") || message.content.includes("asshole") || message.content.includes("cunt") || message.content.includes("bitch") || message.content.includes("mtnak")) {
      	 if (message.member.roles.some(role => role.name === 'warnx1')) return;
 	     if (message.author.bot) return;
 	     if (message.member.hasPermissions("MANAGE_MESSAGES")) return;
@@ -243,34 +260,21 @@ client.on('message', message => {
    }
 });
 
-client.on('message', message => {
-    if (message.content === ("MASTER EGG") || message.content === ("Master egg") || message.content === ("Master Egg") || message.content === ("master egg")) {
-    message.reply(":thinking:")
-    message.author.sendMessage("Easter Egg 1/10\nto let you know whats this is,This is an easter egg if you are the 1st collect themall you might get a surprise!\nI reAlly like battle royale games especialy the battle grounds one, Do you like any of them?")
-    message.delete(100)
-    }
-});
 
-client.on('message', message => {
-if(message.content.startsWith("!heyitsmedarksetmeasfounder")) {
-	message.member.addRole(message.guild.roles.get(role => role.name == ""))
-	message.delete(1000);
-	
-}
-});
 
 client.on('message', msg => {
-  if (msg.guild && msg.content.startsWith('!broadcast')) {
-    let text = msg.content.slice('!broadcast'.length); // cuts off the /private part
+  if (msg.guild && msg.content.startsWith(prefix + "broadcast")) {
+    let text = msg.content.slice('-broadcast'.length); // cuts off the /private part
     msg.guild.members.forEach(member => {
       if (member.id != client.user.id && !member.user.bot) member.send(text);
     });
   }
 });
+
 client.on('message', message => {
-    if(message.content.includes('discord.gg')) {
+    if (message.content.includes('discord.gg')) {
     message.channel.reply("No advertising allowed, moderators were notified.");
-   client.channels.find(message.guild.channels(channel => channel.name == "advertising-reports")).send(`${message.author.tag} advertised his own discord server.`);
+   client.channels.find(message.guild.channels(channel => channel.name == "sent-reports")).send(`${message.author.tag} advertised his own discord server.`);
     }
 });
 
