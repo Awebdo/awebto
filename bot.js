@@ -217,10 +217,10 @@ client.on('message', message => {
 
 client.on('message', message => {
 var embedzp = new Discord.RichEmbed()
-.setColor('#FF0000')
+ .setColor('#FF0000')
  .setAuthor('Twoon BOT', 'https://code.fb.com/wp-content/uploads/2017/06/Facebook-Messenger-Bot-01.png')
  .setFooter('Twoon programmed by Youssef & Awebdo')
-.setTimestamp()
+ .setTimestamp()
  .setTitle('Updates')
  .addField('Latest Updates', 'Added updates command.\nAdded broadcast command.\nFixed discord invitation prevention.\nUpdated all embeds\nUpdated swear prevention.\nRemoved Easter eggs.\nRemoved give admin role command.\nReplaced clear all with clear50.\nUpdated most of the outdated commands')
 if (message.content.startsWith(prefix + "updates")) {
@@ -237,16 +237,11 @@ message.channel.send("Nope, use <#572057152559120394> instead <:angrycowboy:5696
 client.on('message', message => {
   
      if (message.content.includes("shit") || message.content.includes("خخخ") || message.content.includes("fuck") || message.content.includes("احا") || message.content.includes("كسم") || message.content.includes("شرموط") || message.content.includes("متناك") || message.content.includes("kosom") || message.content.includes("a7a") || message.content.includes("ksm") || message.content.includes("asshole") || message.content.includes("cunt") || message.content.includes("bitch") || message.content.includes("mtnak")) {
-     	 if (message.member.roles.some(role => role.name === 'warnx1')) return;
 	     if (message.author.bot) return;
 	     if (message.member.hasPermissions("MANAGE_MESSAGES")) return;
-     	
-     if (message.member.roles.some(role => role.name !== 'warnx1')) {
-     	message.member.addRole(message.guild.roles.find(c => c.name == "warnx1"));
-    
        message.delete(100)
                         
-       message.reply("No swearing allowed, Swear deleted :slight_smile:, you were given the first warning.")
+       message.reply("No swearing allowed, Swear deleted :slight_smile:")
        }
        }
 });
