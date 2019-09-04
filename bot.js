@@ -243,7 +243,6 @@ client.on('message', message => {
                         
        message.reply("No swearing allowed, Swear deleted :slight_smile:")
        }
-       }
 });
 
 
