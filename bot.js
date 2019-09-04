@@ -274,7 +274,7 @@ client.on('message', msg => {
 
 client.on('message', message => {
     if (message.content.includes('discord.gg')) {
-    message.channel.reply("No advertising allowed");
+    message.channel.send("No advertising allowed");
     message.delete(100)
     }
 });
