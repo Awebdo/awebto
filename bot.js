@@ -236,7 +236,7 @@ message.channel.send("Nope, use <#572057152559120394> instead <:angrycowboy:5696
 
 client.on('message', message => {
   
-     if (message.content.includes("shit") || message.content.includes("خخخ") || message.content.includes("fuck") || message.content.includes("احا") || message.content.includes("كسم") || message.content.includes("شرموط") || message.content.includes("متناك") || message.content.includes("kosom") || message.content.includes("a7a") || message.content.includes("ksm") || message.content.includes("asshole") || message.content.includes("cunt") || message.content.includes("bitch") || message.content.includes("mtnak")) {
+     if (message.content.includes("***") || message.content.includes("خخخ") || message.content.includes("***") || message.content.includes("احا") || message.content.includes("كسم") || message.content.includes("شرموط") || message.content.includes("متناك") || message.content.includes("kosom") || message.content.includes("a7a") || message.content.includes("ksm") || message.content.includes("***") || message.content.includes("***") || message.content.includes("bitch") || message.content.includes("mtnak")) {
 	     if (message.author.bot) return;
 	     if (message.member.hasPermissions("MANAGE_MESSAGES")) return;
        message.delete(1000)
@@ -272,5 +272,8 @@ client.on('message', message => {
     message.delete(100)
     }
 });
-
+client.on('message', message => { //this event is fired, whenever the bot sees a new message
+   if (message.isMemberMentioned(client.user)) { 
+   }
+});
 client.login(process.env.BOT_TOKEN);
