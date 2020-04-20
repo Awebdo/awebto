@@ -15,7 +15,7 @@ client.on("ready", () => {
             name: 'my code',
             type: 'WATCHING'
         },
-        status: 'idle'
+        status: 'online'
     })
 })
 client.on("message", message=>{
